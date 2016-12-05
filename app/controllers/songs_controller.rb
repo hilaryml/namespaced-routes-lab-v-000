@@ -29,7 +29,7 @@ class SongsController < ApplicationController
     if preference && preference.allow_create_songs
       @song = Song.new
     else
-      redirect_to songs_path
+      redirect_to songs_path, alert: "User song creation is not enabled."
     end
   end
 
